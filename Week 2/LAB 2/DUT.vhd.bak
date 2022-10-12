@@ -1,0 +1,20 @@
+library ieee;
+use ieee.std_logic_1164;
+library work;
+use work.Gates.all;
+
+entity XOR_GATE is
+	port(A, B: in std_logic; OUTPUT: out std_logic);
+end entity XOR_GATE;
+
+architecture Struct of XOR_GATE is
+	signal A, B, C, D, E, F std_logic;
+begin
+	--component instances
+NAND1: NAND_2 port map ( A => A, B => B, Y => C);
+NAND2: NAND_2 port map ( A => A, B => C, Y => D);
+NAND3: NAND_2 port map ( A => B, B => C, Y => E);
+
+	--final xor
+NAND4: NAND_2 port map ( A => D, B => E, Y => F);
+end Struct;

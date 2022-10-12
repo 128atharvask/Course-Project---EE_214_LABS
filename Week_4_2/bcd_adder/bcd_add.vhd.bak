@@ -1,0 +1,18 @@
+library ieee;
+use ieee.std_logic_1164.all;
+library work;
+use work.Gates.all;
+
+entity bcd_add is
+	port (A3, A2, A1, A0, B3, B2, B1, B0: in std_logic; Y4, Y3, Y2, Y1: out std_logic);
+end entity bcd_add;
+
+architecture struct of bcd_add is
+	signal S3, S2, S1, S0, C1, C2, P, X :std_logic;
+	
+component add_sub_4 is
+	port (A3, A2, A1, A0, B3, B2, B1, B0, M: in std_logic; S3, S2, S1, S0, Cout: out std_logic);
+end add_sub_4;
+
+begin
+ADD1: add_sub_4

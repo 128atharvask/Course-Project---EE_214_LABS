@@ -1,0 +1,38 @@
+|DUT
+input_vector[0] => XOR_GATE:add_instance.a
+input_vector[1] => XOR_GATE:add_instance.b
+output_vector[0] << XOR_GATE:add_instance.f
+
+
+|DUT|XOR_GATE:add_instance
+a => NAND_2:NAND1.A
+a => NAND_2:NAND2.A
+b => NAND_2:NAND1.B
+b => NAND_2:NAND3.A
+f <= NAND_2:NAND4.Y
+
+
+|DUT|XOR_GATE:add_instance|NAND_2:NAND1
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|XOR_GATE:add_instance|NAND_2:NAND2
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|XOR_GATE:add_instance|NAND_2:NAND3
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DUT|XOR_GATE:add_instance|NAND_2:NAND4
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+

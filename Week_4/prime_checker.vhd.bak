@@ -1,0 +1,26 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity prime_checker is
+	port (x3, x2, x1, x0 : in std_logic; y : out std_logic);
+end entity prime_checker;
+
+architecture struct of prime_checker is
+	signal x1_bar, x2_bar, x3_bar, A1, A2, A3, A4, S1, S2, S3, S4, O1, O2 : std_logic;
+begin
+	--component instances
+	NOT1: INVERTER port map(A => x1, Y => x1_bar);
+	NOT2: INVERTER port map(A => x2, Y => x2_bar);
+	NOT3: INVERTER port map(A => x3, Y=> x3_bar);
+	AND1: AND_2 port map (A => x0, B => x1_bar, Y => A1);
+	AND2: AND_2 port map (A => A1, B => x2, Y => S1);
+	AND3: AND_2 port map (A => x0, B => x1, Y => A2);
+	AND4: AND_2 port map (A => A2, B => x3_bar, Y => S2);
+	AND5: AND_2 port map (A => x1, B => x2_bar, Y => A3);
+	AND6: AND_2 port map (A => A3, B => x3_bar, Y => S1);
+	AND7: AND_2 port map (A => x0, B => x1, Y => A4);
+	AND8: AND_2 port map (A => A4, B => x2_bar, Y => S4);
+	OR1: OR_2 port map (A => S1, B => S2, Y => O1);
+	OR2: OR_2 port map (A => S3, B => S4, Y => O2);
+	OR3: OR_2 port map (A => O1, B => O2, Y => y);
+	

@@ -1,0 +1,29 @@
+library ieee;
+use ieee.std_logic_1164.all;
+library work;
+use work.Gates.all;
+
+entity multiplier is
+	port(A3, A2, A1, A0, B2, B1, B0: in std_logic; M6, M5, M4, M3, M2, M1, M0: out std_logic);
+end entity multiplier;
+
+architecture struct of multiplier is
+	signal : std_logic;
+	
+	component FULL_ADDER is
+	port(a1, b1, c1: in std_logic; s, c: out std_logic);
+end component FULL_ADDER;
+
+begin
+AND1: AND_2 port map(A => A0, B => B0, Y => M0);
+AND2: AND_2 port map(A => A1, B => B0, Y => M0);
+AND3: AND_2 port map(A => A0, B => B0, Y => M0);
+AND4: AND_2 port map(A => A0, B => B0, Y => M0);
+AND5: AND_2 port map(A => A0, B => B0, Y => M0);
+AND6: AND_2 port map(A => A0, B => B0, Y => M0);
+AND7: AND_2 port map(A => A0, B => B0, Y => M0);
+AND8: AND_2 port map(A => A0, B => B0, Y => M0);
+AND9: AND_2 port map(A => A0, B => B0, Y => M0);
+AND10: AND_2 port map(A => A0, B => B0, Y => M0);
+AND11: AND_2 port map(A => A0, B => B0, Y => M0);
+AND12: AND_2 port map(A => A0, B => B0, Y => M0);

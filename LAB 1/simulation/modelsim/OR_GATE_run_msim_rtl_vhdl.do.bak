@@ -1,0 +1,10 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {C:/Users/theas/Desktop/IITB/Current Courses/EE 214/OR_using_NAND_Demo_Resources/Gates.vhdl}
+vcom -93 -work work {C:/Users/theas/Desktop/IITB/Current Courses/EE 214/OR_using_NAND_Demo_Resources/OR.vhdl}
+
