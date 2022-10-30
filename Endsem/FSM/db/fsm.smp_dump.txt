@@ -1,0 +1,16 @@
+
+State Machine - |fsm|nx_state
+Name nx_state.admin nx_state.prof nx_state.res nx_state.stud nx_state.idle 
+nx_state.idle 0 0 0 0 0 
+nx_state.stud 0 0 0 1 1 
+nx_state.res 0 0 1 0 1 
+nx_state.prof 0 1 0 0 1 
+nx_state.admin 1 0 0 0 1 
+
+State Machine - |fsm|ps_state
+Name ps_state.admin ps_state.prof ps_state.res ps_state.stud ps_state.idle 
+ps_state.idle 0 0 0 0 0 
+ps_state.stud 0 0 0 1 1 
+ps_state.res 0 0 1 0 1 
+ps_state.prof 0 1 0 0 1 
+ps_state.admin 1 0 0 0 1 
